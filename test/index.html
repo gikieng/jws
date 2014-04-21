@@ -1,62 +1,458 @@
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
 
 
 
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
 <title>Untitled Document</title>
 
-<link href="css/css.css" rel=stylesheet>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="css/OA_background.css" rel=stylesheet>
 <script language="JavaScript">
-function Judge(){
-	var WebUserNO,user_pw
-	WebUserNO=document.all["WebUserNO"].value;
-	if(WebUserNO=="")
-	   {alert("登录用户不能为空！");
-	   document.all["WebUserNO"] .focus();
-	   return false;
-	   }
-}
+  function InsertSchedule(TableID,TaskID,CourseName,TeacherName,ResultWeeks,WeekTypeName,ClassroomName,ResultTypeDES){
+	 var TargetTable = document.all[TableID];
+	 if (TargetTable!=null){
+	  var newRow = TargetTable.insertRow(-1);
+	  var newCell = newRow.insertCell(-1);
+	  newCell.title = CourseName;
+      newCell.innerText = CourseName +"\t" + ClassroomName + "\n" + ResultWeeks + "周" + "\t" + WeekTypeName + "\t" + TeacherName + "\t" + ResultTypeDES;   	  
+	 } 
+  }
 </script>
 </head>
-<body bgcolor="#F8F8F8" leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0">
-<form name="LoginForm" method="post" action="ACTIONLOGON.APPPROCESS?mode=4">
-<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle" background="images/backGround.gif">
-  <table width="80%" border="0" cellpadding="0" cellspacing="0">
-          <tr> 
-      <td width="40%" align="right" nowrap>用户名:</td>
-      <td width="60%"> 
-        <input name="WebUserNO" type="text" id="WebUserNO" style="width:80%">
-      </td>
-    </tr>
-    <tr> 
-      <td align="right" nowrap>密&nbsp;&nbsp;码:</td>
-      <td><input name="Password" type="password" id="Password" style="width:80%"></td>
-    </tr>
-    <tr> 
-      <td align="right" nowrap>附加码:</td>
-      <td><input name="Agnomen" type="text" id="Agnomen" size="12"><img src="ACTIONVALIDATERANDOMPICTURE.APPPROCESS" width="60" height="20"></td>
-    </tr>
-          <tr align="center" valign="bottom"> 
-            <td height="25" colspan="2" nowrap> 
-              <table width="100" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left"><input type="image" border="0" name="submit" src="User_JSP/images/MiniLogon.gif" width="44" height="19" onClick="javascript:return Judge();"></td>
-            <td align="right"></td>
-          </tr>
-        </table></td>
-    </tr>
-  </table>
-	</td>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+<table border="1" bordercolor="#000000" style="BORDER-COLLAPSE:collapse" align="left" cellspacing="0" class=tableborder>
+  <tr class="color-row">
+    <td height="20" colspan="8" nowrap align="center"><font size="4"><strong>哈尔滨工程大学2013-2014学年第二学期学生选课结果</strong></font></td>
   </tr>
+  <tr class="color-row">
+    <td height="20" colspan="8" nowrap>院系:&nbsp;计算机科学与技术学院&nbsp;&nbsp;专业:&nbsp;计算机科学与技术&nbsp;&nbsp;班级:&nbsp;20120615&nbsp;&nbsp;姓名:&nbsp;李志强</td>
+  </tr>  
+  <tr class="color-header">
+    <td height="20" nowrap width="40">&nbsp;</td>
+    
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期一MON&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期二TUE&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期三WED&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期四THU&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期五FRI&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期六SAT&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期日SUN&nbsp;&nbsp;</td>
+	
+  </tr>
+    
+  <tr class="color-row">
+    <td align="right" nowrap class="color-header" height="100">&nbsp;1 - 2&nbsp;</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE1#1" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE1#2" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE1#3" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE1#4" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE1#5" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE1#6" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE1#7" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+  </tr>
+    
+  <tr class="color-row">
+    <td align="right" nowrap class="color-header" height="100">&nbsp;3 - 4&nbsp;</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE2#1" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE2#2" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE2#3" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE2#4" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE2#5" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE2#6" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE2#7" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+  </tr>
+    
+  <tr class="color-row">
+    <td align="right" nowrap class="color-header" height="100">&nbsp;5 - 6&nbsp;</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE3#1" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE3#2" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE3#3" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE3#4" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE3#5" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE3#6" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE3#7" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+  </tr>
+    
+  <tr class="color-row">
+    <td align="right" nowrap class="color-header" height="100">&nbsp;7 - 8&nbsp;</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE4#1" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE4#2" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE4#3" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE4#4" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE4#5" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE4#6" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE4#7" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+  </tr>
+    
+  <tr class="color-row">
+    <td align="right" nowrap class="color-header" height="100">&nbsp;9 - 10&nbsp;</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE5#1" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE5#2" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE5#3" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE5#4" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE5#5" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE5#6" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE5#7" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+  </tr>
+    
+  <tr class="color-row">
+    <td align="right" nowrap class="color-header" height="100">&nbsp;11 - 12&nbsp;</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE6#1" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE6#2" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE6#3" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE6#4" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE6#5" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE6#6" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+    <td valign="top" nowrap> 
+      <table id="TABLE6#7" height="1" cellspacing="0" cellpadding="0">
+      </table>
+	</td>
+    
+  </tr>
+  
+  <tr class="color-header">
+    <td height="20" nowrap width="40">&nbsp;</td>
+    
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期一MON&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期二TUE&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期三WED&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期四THU&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期五FRI&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期六SAT&nbsp;&nbsp;</td>
+	
+    <td nowrap align="center" width="200">&nbsp;&nbsp;星期日SUN&nbsp;&nbsp;</td>
+	
+  </tr>  
+  
+  
+  <tr class="color-row">
+    <td height="20" nowrap width="40" align="center">需另行查询上课时间的课程</td>
+    <td height="30"  nowrap align="left" colspan="7">&nbsp;0906551&nbsp;&nbsp;&nbsp;&nbsp;数字逻辑实验[1]&nbsp;&nbsp;&nbsp;&nbsp;必修课&nbsp;&nbsp;&nbsp;&nbsp;1-18&nbsp;&nbsp;&nbsp;&nbsp;武俊鹏;孟昭林;刘书勇;赵国冬<br></td>
+  </tr>
+
+
+
 </table>
-</form>		
+
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#1","107054","大学英语（四）","李宁","1-13.15","整周","J112教室","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#1","106656","数据结构","曲立平","1-13.15-17","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#1","107054","大学英语（四）","崔丹","1-13.15","整周","J112教室","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE2#1","109262","电子技术C","刘庆玲","1-13.15","整周","21B 012中","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#2","106517","计算几何","陈志远","1-6","整周","21B 510大","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","刘书勇","7-12","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE1#2","106653","离散数学A","朴秀峰","1-18","整周","21B 112中","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#2","106679","面向对象程序设计","李丽洁","1-14","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","程旭辉","7-12","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","赵国冬","7-12","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","武俊鹏","7-12","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE2#2","106660","数字逻辑","门朝光","1-17","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","付小晶","7-12","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#3","106656","数据结构","曲立平","1-16","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE2#3","107054","大学英语（四）","李宁","1-14","整周","J112教室","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE1#3","109262","电子技术C","刘庆玲","1-14","整周","21B 012中","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE2#3","107054","大学英语（四）","崔丹","1-14","整周","J112教室","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE2#4","106660","数字逻辑","门朝光","1-8.10-16","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#4","109627","体育（四）","祝凯","4-19","整周","练习馆西","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE1#4","106653","离散数学A","朴秀峰","1-18","整周","21B 112中","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#4","106345","形势与政策（三）","胡泊","3.5.7.11","整周","1#N101","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#5","106517","计算几何","陈志远","1-6","整周","21B 510大","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","武俊鹏","10-15","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","赵国冬","10-15","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE1#5","107702","专业导论","黄少滨","1-12","整周","21B 011大","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","程旭辉","10-15","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","付小晶","10-15","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE2#5","106679","面向对象程序设计","李丽洁","1-6","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","刘书勇","10-15","整周","21B 506小","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE1#6","106702","数据结构与程序设计实验","曲立平","11-18","整周","计算中心276室","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE2#6","106702","数据结构与程序设计实验","曲立平","11-18","整周","计算中心276室","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE3#6","106679","面向对象程序设计","李丽洁","7.8.12.14","整周","院实验室","");
+		        </script>
+			 
+		        <script language="JavaScript">   
+				  InsertSchedule("TABLE4#6","106679","面向对象程序设计","李丽洁","7.8.12.14","整周","院实验室","");
+		        </script>
+			 
+
+
+
 </body>
 </html>
-<script language="JavaScript">
- 
-</script>
-
