@@ -1,0 +1,4 @@
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 83
+
+WebUserNO=2012061512&Password=765137&Agnomen=5416&submit.x=22&submit.y=1&applicant=
