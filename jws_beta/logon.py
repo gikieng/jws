@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-import gtk, urllib2, urllib,sys
+import gtk, urllib2, urllib,sys, re
 class LoginPage(gtk.Window):
     url = 'http://jw.hrbeu.edu.cn/ACTIONLOGON.APPPROCESS?mode=4'
     
@@ -14,13 +14,6 @@ class LoginPage(gtk.Window):
 #设置连接信息
         self.opener = opener
         self.headers = headers
-        request = urllib2.Request(url = self.url, headers = self.headers)
-        try:
-            self.opener.open(request)
-        except Exception,e:
-            for item in e:
-                print item
-            sys.exit(1)
 #设置窗口布局
         self.fixed = gtk.Fixed()
         self.pw_text = ""
@@ -32,6 +25,7 @@ class LoginPage(gtk.Window):
         self.pword_entry.set_visibility(False)
         self.pword_label = gtk.Label("密码")
         self.agnom_label = gtk.Label("验证码")
+        self.response_label = gtk.Label("欢迎使用！")
         self.agnom_image = gtk.Image()
         self.agnom_image.set_size_request(60, 30)
         self.agnom_btn = gtk.Button()
@@ -41,6 +35,7 @@ class LoginPage(gtk.Window):
         self.login_button = gtk.Button("登录")
         self.login_button.set_border_width(0)
         self.login_button.set_size_request(80, 50)
+      
         
         self.agnom_btn.add(self.agnom_image)
         self.fixed.put(self.login_button, 300, 100)
@@ -51,6 +46,7 @@ class LoginPage(gtk.Window):
         self.fixed.put(self.agnom_label, 54, 124)
         self.fixed.put(self.agnom_entry, 120, 124)
         self.fixed.put(self.agnom_btn, 190, 120)
+        self.fixed.put(self.response_label, 160, 180)
 #加载验证码
         self.changeImage('')
 #绑定窗口事件
@@ -68,7 +64,7 @@ class LoginPage(gtk.Window):
         data={'submit.x': '0', 'WebUserNO':self.user_text, 'Agnomen': self.agnom_text,'Password': self.pw_text, 'submit.y': '0'}
         request = urllib2.Request(url = self.url, data = urllib.urlencode(data),headers = self.headers)
         response = self.opener.open(request)
-        print response.read()
+        self.getResponseInfo(response.read())
         
 
 #事件
@@ -88,3 +84,16 @@ class LoginPage(gtk.Window):
         f.write(self.opener.open(imrequest).read())
         f.close()
         self.agnom_image.set_from_file("./tmp/agnomen.jpg")
+    
+    def getResponseInfo(self,strbuff):
+        agnomen = re.compile(r'\xc7\xeb\xca\xe4\xc8\xeb\xd5\xfd\xc8\xb7\xb5\xc4\xb8\xbd\xbc\xd3\xc2\xeb')
+        if agnomen.search(strbuff):
+            self.response_label.set_label("验证码错误！")
+            return
+        user = re.compile(r'\xb4\xed\xce\xf3\xb5\xc4\xd3\xc3\xbb\xa7\xc3\xfb\xbb\xf2\xd5\xdf\xc3\xdc\xc2\xeb\\n')
+        if user.search(strbuff):
+            self.response_label.set_label("用户名或密码错误！")
+            return
+        gtk.main_quit()
+        
+ 

@@ -15,3 +15,4 @@ htmlpath = r"./tmp/index.html"
 f=file(htmlpath,'wb')
 f.write(response.read())
 f.close()
+print 'success'

@@ -58,6 +58,6 @@ function Judge(){
 </html>
 <script language="JavaScript">
  
-  alert("请输入正确的附加码\n");
+  alert("错误的用户名或者密码\n");
  
 </script>

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+<html>
+<head>
+<title>Untitled Document</title>
+
+<link href="css/css.css" rel=stylesheet>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+function Judge(){
+	var WebUserNO,user_pw
+	WebUserNO=document.all["WebUserNO"].value;
+	if(WebUserNO=="")
+	   {alert("登录用户不能为空！");
+	   document.all["WebUserNO"] .focus();
+	   return false;
+	   }
+}
+</script>
+</head>
+<body bgcolor="#F8F8F8" leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0">
+<form name="LoginForm" method="post" action="ACTIONLOGON.APPPROCESS?mode=4">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="images/backGround.gif">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0">
+          <tr> 
+      <td width="40%" align="right" nowrap>用户名:</td>
+      <td width="60%"> 
+        <input name="WebUserNO" type="text" id="WebUserNO" style="width:80%">
+      </td>
+    </tr>
+    <tr> 
+      <td align="right" nowrap>密&nbsp;&nbsp;码:</td>
+      <td><input name="Password" type="password" id="Password" style="width:80%"></td>
+    </tr>
+    <tr> 
+      <td align="right" nowrap>附加码:</td>
+      <td><input name="Agnomen" type="text" id="Agnomen" size="12"><img src="ACTIONVALIDATERANDOMPICTURE.APPPROCESS" width="60" height="20"></td>
+    </tr>
+          <tr align="center" valign="bottom"> 
+            <td height="25" colspan="2" nowrap> 
+              <table width="100" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left"><input type="image" border="0" name="submit" src="User_JSP/images/MiniLogon.gif" width="44" height="19" onClick="javascript:return Judge();"></td>
+            <td align="right"></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+	</td>
+  </tr>
+</table>
+</form>		
+</body>
+</html>
+<script language="JavaScript">
+ 
+  alert ("请输入正确的附加码\n");
+ 
+</script>fuck you
