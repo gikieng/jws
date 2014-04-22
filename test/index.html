@@ -4,455 +4,266 @@
 
 
 
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GBK">
-<title>Untitled Document</title>
+<title>成绩查询</title>
 
 <link href="css/OA_background.css" rel=stylesheet>
 <script language="JavaScript">
-  function InsertSchedule(TableID,TaskID,CourseName,TeacherName,ResultWeeks,WeekTypeName,ClassroomName,ResultTypeDES){
-	 var TargetTable = document.all[TableID];
-	 if (TargetTable!=null){
-	  var newRow = TargetTable.insertRow(-1);
-	  var newCell = newRow.insertCell(-1);
-	  newCell.title = CourseName;
-      newCell.innerText = CourseName +"\t" + ClassroomName + "\n" + ResultWeeks + "周" + "\t" + WeekTypeName + "\t" + TeacherName + "\t" + ResultTypeDES;   	  
-	 } 
-  }
+ var ReturnValue = window.showModalDialog("Appraise_JSP/confirm.jsp?type=QS", "", "dialogWidth:300px; dialogHeight:150px; dialogLeft:300px; dialogTop:300px;status:no; Resizable=yes;");
+if( ReturnValue != null&&ReturnValue==0 ){
+
+//if(!window.confirm("各位同学：\n欢迎您对授课教师做一个客观的评价！您的意见对学校非常重要！\n您确定已经完成本学期的评教活动？")){
+  window.location.href="ACTIONJSATTENDAPPRAISE_001.APPPROCESS";
+}
+ function QueryResult(){
+ window.document.forms[0].action='ACTIONQUERYSTUDENTSCORE.APPPROCESS';
+ window.document.forms[0].target='_self';
+ window.document.forms[0].submit();
+ }
 </script>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+.style2 {
+	font-size: 36px;
+	font-weight: bold;
+}
+-->
+</style>
+
 </head>
-<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
-<table border="1" bordercolor="#000000" style="BORDER-COLLAPSE:collapse" align="left" cellspacing="0" class=tableborder>
-  <tr class="color-row">
-    <td height="20" colspan="8" nowrap align="center"><font size="4"><strong>哈尔滨工程大学2013-2014学年第二学期学生选课结果</strong></font></td>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="overflow:hidden">
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" class=tableborder>
+  <tr> 
+    <td  background="include/Frame/images/footbg.gif" height="20" class=title>&nbsp;&nbsp;&nbsp;&nbsp;<b>
+成绩查询
+</b></td>
+  </tr>
+  <tr> 
+    <td height="10" background="include/Frame/images/leftbg.gif"></td>
+  </tr>
+  <tr> 
+    <td valign="top" align="center" height="100%">
+
+<form name="" action="" method="post" target="_Result">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr align="left" valign="top">
+    <td width="100%" height="1" align="center">
+	<table width="80%" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td height="36">姓名:&nbsp;李志强&nbsp;学号:&nbsp;2012061512&nbsp;</td>
+            <td width="300" align="right" nowrap>学年学期&nbsp;
+              <select name="YearTermNO" style="width:200px" onChange="QueryResult()">
+            <option value="20">2013-2014学年第二学期</option><option value="19" selected>2013-2014学年第一学期</option><option value="18">2012-2013学年第二学期</option><option value="17">2012-2013学年第一学期</option><option value="16">2011-2012学年第二学期</option><option value="15">2011-2012学年第一学期</option><option value="14">2010-2011学年第二学期</option><option value="13">2010-2011学年第一学期</option><option value="12">2009-2010学年第二学期</option><option value="11">2009-2010学年第一学期</option><option value="10">2008-2009学年第二学期</option><option value="9">2008-2009学年第一学期</option><option value="8">2007-2008学年第二学期</option><option value="7">2007-2008学年第一学期</option><option value="6">2006-2007学年第二学期</option><option value="5">2006-2007学年第一学期</option><option value="4">2005-2006学年第二学期</option><option value="3">2005-2006学年第一学期</option><option value="2">2004-2005学年第二学期</option><option value="1">2004-2005学年第一学期</option></select></td>
+            <td width="100" align="right"><input type="button" name="doQuery" value=" 查 询 " onClick="QueryResult()"></td>
+          </tr>
+        </table>
+</td>
   </tr>
-  <tr class="color-row">
-    <td height="20" colspan="8" nowrap>院系:&nbsp;计算机科学与技术学院&nbsp;&nbsp;专业:&nbsp;计算机科学与技术&nbsp;&nbsp;班级:&nbsp;20120615&nbsp;&nbsp;姓名:&nbsp;李志强</td>
-  </tr>  
+  <tr align="left" valign="top"> 
+    <td width="100%" height="100%" align="center">
+	<div style="height:100% ; width:90%; overflow:auto">	
+<table width="100%" border="1" bordercolor="#666666" style="BORDER-COLLAPSE:collapse" cellspacing="0" class=tableborder>
   <tr class="color-header">
-    <td height="20" nowrap width="40">&nbsp;</td>
-    
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期一MON&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期二TUE&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期三WED&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期四THU&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期五FRI&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期六SAT&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期日SUN&nbsp;&nbsp;</td>
-	
+    <td width="11%" align="center" nowrap height="30">课程性质</td>
+    <td width="12%" align="center" nowrap>课程号</td>
+    <td width="17%" align="center" nowrap>课程名称</td>
+    <td width="11%" align="center" nowrap>考试类型</td>
+    <td width="9%" align="center" nowrap>学时</td>
+    <td width="9%" align="center" nowrap>学分</td>
+    <td width="11%" align="center" nowrap>成绩类型</td>
+    <td width="10%" align="center" nowrap>期末成绩</td>
+    <td width="10%" align="center" nowrap>总评成绩</td>
   </tr>
-    
+   
   <tr class="color-row">
-    <td align="right" nowrap class="color-header" height="100">&nbsp;1 - 2&nbsp;</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE1#1" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE1#2" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE1#3" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE1#4" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE1#5" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE1#6" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE1#7" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
+    <td height="28" align="center" nowrap>人文与社会科学基础必修课</td>
+    <td align="center" nowrap>0913111</td>
+    <td nowrap>&nbsp;马克思主义基本原理概论</td>
+    <td align="center" nowrap>考查</td>
+    <td align="center" nowrap>48</td>
+    <td align="center" nowrap>3</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>优秀</td>
+    <td align="center" nowrap>优秀</td>
   </tr>
-    
+   
   <tr class="color-row">
-    <td align="right" nowrap class="color-header" height="100">&nbsp;3 - 4&nbsp;</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE2#1" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE2#2" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE2#3" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE2#4" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE2#5" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE2#6" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE2#7" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
+    <td height="28" align="center" nowrap>人文与社会科学基础必修课</td>
+    <td align="center" nowrap>0916003</td>
+    <td nowrap>&nbsp;体育（三）</td>
+    <td align="center" nowrap>考查</td>
+    <td align="center" nowrap>32</td>
+    <td align="center" nowrap>1</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>良好</td>
+    <td align="center" nowrap>良好</td>
   </tr>
-    
+   
   <tr class="color-row">
-    <td align="right" nowrap class="color-header" height="100">&nbsp;5 - 6&nbsp;</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE3#1" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE3#2" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE3#3" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE3#4" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE3#5" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE3#6" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE3#7" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
+    <td height="28" align="center" nowrap>人文与社会科学基础必修课</td>
+    <td align="center" nowrap>0913137</td>
+    <td nowrap>&nbsp;形势与政策（二）</td>
+    <td align="center" nowrap>考查</td>
+    <td align="center" nowrap>8</td>
+    <td align="center" nowrap>.5</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>良好</td>
+    <td align="center" nowrap>良好</td>
   </tr>
-    
+   
   <tr class="color-row">
-    <td align="right" nowrap class="color-header" height="100">&nbsp;7 - 8&nbsp;</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE4#1" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE4#2" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE4#3" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE4#4" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE4#5" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE4#6" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE4#7" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
+    <td height="28" align="center" nowrap>基础实践环节</td>
+    <td align="center" nowrap>0911018</td>
+    <td nowrap>&nbsp;大学物理实验（二）</td>
+    <td align="center" nowrap>考查</td>
+    <td align="center" nowrap>36</td>
+    <td align="center" nowrap>2.25</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>良好</td>
+    <td align="center" nowrap>良好</td>
   </tr>
-    
+   
   <tr class="color-row">
-    <td align="right" nowrap class="color-header" height="100">&nbsp;9 - 10&nbsp;</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE5#1" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE5#2" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE5#3" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE5#4" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE5#5" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE5#6" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE5#7" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
+    <td height="28" align="center" nowrap>自然科学与技术基础必修课</td>
+    <td align="center" nowrap>0907011</td>
+    <td nowrap>&nbsp;工程图学基础</td>
+    <td align="center" nowrap>考试</td>
+    <td align="center" nowrap>40</td>
+    <td align="center" nowrap>2.5</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>73</td>
+    <td align="center" nowrap>73</td>
   </tr>
-    
+   
   <tr class="color-row">
-    <td align="right" nowrap class="color-header" height="100">&nbsp;11 - 12&nbsp;</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE6#1" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE6#2" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE6#3" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE6#4" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE6#5" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE6#6" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
-    <td valign="top" nowrap> 
-      <table id="TABLE6#7" height="1" cellspacing="0" cellpadding="0">
-      </table>
-	</td>
-    
+    <td height="28" align="center" nowrap>自然科学与技术基础必修课</td>
+    <td align="center" nowrap>0908001</td>
+    <td nowrap>&nbsp;电工基础</td>
+    <td align="center" nowrap>考试</td>
+    <td align="center" nowrap>64</td>
+    <td align="center" nowrap>4</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>75</td>
+    <td align="center" nowrap>75</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>自然科学与技术基础必修课</td>
+    <td align="center" nowrap>0907021</td>
+    <td nowrap>&nbsp;机械基础</td>
+    <td align="center" nowrap>考试</td>
+    <td align="center" nowrap>48</td>
+    <td align="center" nowrap>3</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>77</td>
+    <td align="center" nowrap>77</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>自然科学与技术基础必修课</td>
+    <td align="center" nowrap>0911009</td>
+    <td nowrap>&nbsp;复变函数与积分变换</td>
+    <td align="center" nowrap>考试</td>
+    <td align="center" nowrap>48</td>
+    <td align="center" nowrap>3</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>74</td>
+    <td align="center" nowrap>74</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>自然科学与技术基础必修课</td>
+    <td align="center" nowrap>0911013</td>
+    <td nowrap>&nbsp;大学物理A（二）</td>
+    <td align="center" nowrap>考试</td>
+    <td align="center" nowrap>64</td>
+    <td align="center" nowrap>4</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>71</td>
+    <td align="center" nowrap>71</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>自然科学与技术基础必修课</td>
+    <td align="center" nowrap>0902401</td>
+    <td nowrap>&nbsp;力学基础</td>
+    <td align="center" nowrap>考试</td>
+    <td align="center" nowrap>48</td>
+    <td align="center" nowrap>3</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>74</td>
+    <td align="center" nowrap>74</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>人文与社会科学基础必修课</td>
+    <td align="center" nowrap>0912003</td>
+    <td nowrap>&nbsp;大学英语（三）</td>
+    <td align="center" nowrap>考试</td>
+    <td align="center" nowrap>56</td>
+    <td align="center" nowrap>3.5</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>70</td>
+    <td align="center" nowrap>70</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>专业拓展</td>
+    <td align="center" nowrap>0906039</td>
+    <td nowrap>&nbsp;信息安全概论</td>
+    <td align="center" nowrap>考查</td>
+    <td align="center" nowrap>24</td>
+    <td align="center" nowrap>1</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>良好</td>
+    <td align="center" nowrap>良好</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>专业拓展</td>
+    <td align="center" nowrap>0922002</td>
+    <td nowrap>&nbsp;信息检索B</td>
+    <td align="center" nowrap>考查</td>
+    <td align="center" nowrap>16</td>
+    <td align="center" nowrap>.5</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>中等</td>
+    <td align="center" nowrap>中等</td>
+  </tr>
+   
+  <tr class="color-row">
+    <td height="28" align="center" nowrap>艺术活动</td>
+    <td align="center" nowrap>0926001</td>
+    <td nowrap>&nbsp;艺术活动</td>
+    <td align="center" nowrap>考查</td>
+    <td align="center" nowrap> 1周</td>
+    <td align="center" nowrap>1</td>
+    <td align="center" nowrap>期末考试</td>
+    <td align="center" nowrap>优秀</td>
+    <td align="center" nowrap>优秀</td>
   </tr>
   
-  <tr class="color-header">
-    <td height="20" nowrap width="40">&nbsp;</td>
-    
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期一MON&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期二TUE&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期三WED&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期四THU&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期五FRI&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期六SAT&nbsp;&nbsp;</td>
-	
-    <td nowrap align="center" width="200">&nbsp;&nbsp;星期日SUN&nbsp;&nbsp;</td>
-	
-  </tr>  
-  
-  
-  <tr class="color-row">
-    <td height="20" nowrap width="40" align="center">需另行查询上课时间的课程</td>
-    <td height="30"  nowrap align="left" colspan="7">&nbsp;0906551&nbsp;&nbsp;&nbsp;&nbsp;数字逻辑实验[1]&nbsp;&nbsp;&nbsp;&nbsp;必修课&nbsp;&nbsp;&nbsp;&nbsp;1-18&nbsp;&nbsp;&nbsp;&nbsp;武俊鹏;孟昭林;刘书勇;赵国冬<br></td>
+  <tr>
+    <td colspan="9" nowrap height="25">共有记录数14<img src="images/Spacer.gif" width="600" height="1"></td>
   </tr>
-
-
-
+</table>	
+</div>	</td>
+  </tr>
 </table>
+</form>
 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#1","107054","大学英语（四）","李宁","1-13.15","整周","J112教室","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#1","106656","数据结构","曲立平","1-13.15-17","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#1","107054","大学英语（四）","崔丹","1-13.15","整周","J112教室","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE2#1","109262","电子技术C","刘庆玲","1-13.15","整周","21B 012中","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#2","106517","计算几何","陈志远","1-6","整周","21B 510大","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","刘书勇","7-12","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE1#2","106653","离散数学A","朴秀峰","1-18","整周","21B 112中","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#2","106679","面向对象程序设计","李丽洁","1-14","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","程旭辉","7-12","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","赵国冬","7-12","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","武俊鹏","7-12","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE2#2","106660","数字逻辑","门朝光","1-17","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#2","106527","计算机技术创新基础","付小晶","7-12","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#3","106656","数据结构","曲立平","1-16","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE2#3","107054","大学英语（四）","李宁","1-14","整周","J112教室","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE1#3","109262","电子技术C","刘庆玲","1-14","整周","21B 012中","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE2#3","107054","大学英语（四）","崔丹","1-14","整周","J112教室","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE2#4","106660","数字逻辑","门朝光","1-8.10-16","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#4","109627","体育（四）","祝凯","4-19","整周","练习馆西","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE1#4","106653","离散数学A","朴秀峰","1-18","整周","21B 112中","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#4","106345","形势与政策（三）","胡泊","3.5.7.11","整周","1#N101","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#5","106517","计算几何","陈志远","1-6","整周","21B 510大","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","武俊鹏","10-15","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","赵国冬","10-15","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE1#5","107702","专业导论","黄少滨","1-12","整周","21B 011大","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","程旭辉","10-15","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","付小晶","10-15","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE2#5","106679","面向对象程序设计","李丽洁","1-6","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#5","106527","计算机技术创新基础","刘书勇","10-15","整周","21B 506小","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE1#6","106702","数据结构与程序设计实验","曲立平","11-18","整周","计算中心276室","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE2#6","106702","数据结构与程序设计实验","曲立平","11-18","整周","计算中心276室","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE3#6","106679","面向对象程序设计","李丽洁","7.8.12.14","整周","院实验室","");
-		        </script>
-			 
-		        <script language="JavaScript">   
-				  InsertSchedule("TABLE4#6","106679","面向对象程序设计","李丽洁","7.8.12.14","整周","院实验室","");
-		        </script>
-			 
-
-
-
+</td>
+  </tr>
+  <tr> 
+    <td background="include/Frame/images/leftbg.gif" height="10"></td>
+  </tr>
+  <tr> 
+  <td align="right" height="20"><a href="http://www.tsanghao.com/QH_RJ/index.htm" target="_blank"><font color="#000000">http://www.tsanghao.com/</font></a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
 </body>
 </html>
+
